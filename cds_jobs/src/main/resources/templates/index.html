@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="cdsJobs">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDS - JOBS</title>
+
+<!-- Bootstrap -->
+<link href="assets/css/style.min.css" rel="stylesheet">
+<link href="assets/css/custom.css" rel="stylesheet">
+<script src="./lib/angular/angular.min.js"></script>
+<script src="./lib/angular/angular-route.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/main-controller.js"></script>
+<script src="./js/controller/index-controller.js"></script>
+<script src="./js/controller/detalhe-controller.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+
+	<!-- Loading -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+
+	</div>
+
+	<header>
+
+		<nav id="mainNav" class="navbar navbar-default">
+			<div class="container">
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#mainMenu">
+						<i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand page-scroll" href="#page-top"> <img
+						class="wow fadeIn" src="assets/img/logo.png" />
+					</a>
+				</div>
+
+				<!-- Collect the nav links -->
+				<div class="collapse navbar-collapse" id="mainMenu">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="page-scroll" href="#page-top">Home</a></li>
+						<li><a class="page-scroll" href="#about">Sobre Nós</a></li>
+						<li><a class="page-scroll" href="#howItWorks">Como
+								Funciona</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#loginModal">
+								Login </a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6 caption">
+					<h3 class="wow fadeIn">Faça Parte do Nosso Time!</h3>
+					<h5 class="wow fadeIn" data-wow-delay="0.5s">Somos uma empresa
+						de porte nacional, integradora de soluções, com destaque dentro e
+						fora do Brasil.</h5>
+					<div class="text-center">
+						<a class="page-scroll wow fadeIn" " href="#about"
+							data-wow-delay="1s"><img src="assets/img/ico-mouse.png"></a>
+					</div>
+				</div>
+
+
+				<div class="col-md-4 col-md-offset-2"  ng-app="cdsJobs">
+					<form novalidate name="frmUsuario" ng-controller="indexController">
+						<h4>Quero Fazer Parte!</h4>
+
+						<div class="row">
+							<div class="col-md-6">
+								<a href="#" class="btn facebook">Conectar com <i
+									class="fa fa-facebook" aria-hidden="true"></i></a>
+							</div>
+							<div class="col-md-6">
+								<a href="#" class="btn google">Conectar com <i
+									class="fa fa-google-plus" aria-hidden="true"></i></a>
+							</div>
+						</div>
+						<H4>{{message}}</H4>
+						<input type="text" placeholder="Nome Completo" name="txtNome"
+							ng-minlength="3" ng-maxlength="100" ng-model="usuario.nome"
+							required="required" /> <input type="email" placeholder="E-mail"
+							name="txtEmail" ng-model="usuario.email" required /> <span
+							ng-show="frmUsuario.txtEmail.$error.required && frmUsuario.txtEmail.$dirty">Campo
+							E-mail Obrigatório</span> <span
+							ng-show="frmUsuario.txtEmail.$error.email">E-mail inválido</span>
+
+						<input type="text" placeholder="Telefone"
+							ng-model="usuario.telefone" name="txtTelefone"
+							required="required" /> <input type="password"
+							placeholder="Senha" ng-model="usuario.senha" name="txtSenha"
+							required="required" /> <input type="submit"
+							value="Crie Sua Conta" ng-click="salvarUsuario()" />
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</header>
+
+	<!-- Section About -->
+	<section id="about">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-5">
+					<div class="page-header">
+						<h3>Sobre a CDS</h3>
+						<hr>
+					</div>
+
+					<p>A CDS disponibiliza, no mercado nacional, produtos de grande
+						utilidade, desenvolvidos pela própria empresa.</p>
+
+					<p>Ao longo dos anos, construiu e implementou soluções
+						integradas diferenciadas, aplicáveis nas atividades públicas e nas
+						empresas privadas.</p>
+
+					<p>Com sede em Brasília e Escritórios em dois estados (São
+						Paulo e Paraná), a empresa já atendeu mais de 200 clientes
+						públicos e privados, em 14 anos de atuação.</p>
+
+					<a href="#page-top"
+						class="page-scroll btn btn-offset btn-primary">Quero me
+						Cadastrar</a>
+				</div>
+
+				<div class="col-md-7">
+					<div class="row">
+						<div class="col-md-4 box col-md-offset-4 wow fadeInUp">
+							<i class="sprite sprite-ico-processo"></i> Processos
+						</div>
+						<div class="col-md-4 box wow fadeInUp">
+							<i class="sprite sprite-ico-desenv"></i> Desenvolvimento
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 box col-md-offset-2 wow fadeInUp"
+							data-wow-delay="0.5s">
+							<i class="sprite sprite-ico-infra"></i> Infra
+						</div>
+						<div class="col-md-4 box wow fadeInUp" data-wow-delay="0.5s">
+							<i class="sprite sprite-ico-geo"></i> Geo
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 box wow fadeInUp" data-wow-delay="1s">
+							<i class="sprite sprite-ico-design"></i> Design
+						</div>
+						<div class="col-md-4 box large wow fadeInUp" data-wow-delay="1s">
+							<i class="sprite sprite-ico-bi"></i> Business <br /> Intelligence
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Section About -->
+	<section id="howItWorks">
+		<div class="container">
+
+			<div class="page-header text-center">
+				<h3>Como Funciona</h3>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-10 col-md-offset-1">
+
+					<div class="row step">
+						<div class="col-md-4 wow fadeInDown">
+							<div class="wrapper-img step1"></div>
+							<hr>
+							<h4>1. Cadastre-se em nosso Portal</h4>
+							<p>Indique em seu cadastro seu histórico profissional,
+								habilidades e como pode nos ajudar</p>
+						</div>
+
+						<div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
+							<div class="wrapper-img step2"></div>
+							<hr>
+							<h4>2. Inscreva-se nas oportunidades</h4>
+							<p>Veja as oportunidades disponíveis e selecione aquela que
+								melhor encaixa em seu perfil.</p>
+						</div>
+
+						<div class="col-md-4 wow fadeInUp" data-wow-delay="1s">
+							<div class="wrapper-img step3"></div>
+							<hr>
+							<h4>3. Aguarde Aprovação de inscrição</h4>
+							<p>Após a inscrição aguarde avaliação de sua inscrição e o
+								contato de nossa equipe</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Section Footer -->
+	<section id="contact">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+
+					<div class="row">
+
+						<div class="col-md-7">
+							<h3>Fale Conosco</h3>
+							<form>
+								<input type="text" placeholder="Nome Completo"> <input
+									type="text" placeholder="Endereço de E-mail">
+								<textarea placeholder="Sua mensagem"></textarea>
+								<input type="submit" value="Enviar">
+							</form>
+						</div>
+
+						<div class="col-md-5">
+							<h3>Onde Estamos</h3>
+							<ul>
+								<li><b>Brasília - DF</b> <br /> SIBS (Setor de Indústrias
+									Bernardo Sayão) Qd. 01, Conjunto B, Lote 01 Núcleo Bandeirante
+									CEP: 71736-102 | +55(61) 3244-0255</li>
+								<li><b>Curitiba - PR</b> <br /> Rua Emiliano Perneta, nº
+									466 Ed. Work Space Emiliano, Salas 1005 e 1006 CEP: 80420-010 |
+									+55(41) 2106-6976</li>
+								<li><b>São Paulo - SP</b> <br /> Rua do Paraíso 45,
+									Conjunto 72 7º andar, Bairro Paraíso. CEP: 04.103–000 | +55(11)
+									2503-4102</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Modal Login -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"  
+		aria-labelledby="loginModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form novalidate name="frmLogin" ng-controller="indexController">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="loginModalLabel">Fazer Login</h4>
+					</div>
+					<div class="modal-body">
+					<H4>{{message}}</H4>
+					<br/>
+						<label>E-mail</label> <input type="email" placeholder="E-mail"
+							name="txtEmail" ng-model="usuario.email" required> <label>Senha</label>
+						<input type="password" placeholder="Senha"
+							ng-model="usuario.senha" name="txtSenha" required="required" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="login()">Acessar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="lib/js/jquery.min.js"></script>
+	<script src="lib/js/jquery.easing.min.js"></script>
+
+	<!-- Include Compiled plugins -->
+	<script src="lib/js/bootstrap.min.js"></script>
+	<script src="lib/js/pace.js"></script>
+	<script src="lib/js/wow.min.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>

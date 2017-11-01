@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body.inside-page header {
+	background-position: center -194px;
+	padding-bottom: 66px!important;
+	margin: 0 0 27px!important;
+}
+
+body.inside-page header nav.navbar {
+    margin-bottom: 60px;
+}
+
+.formStyle input {
+	border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    width: 100%;
+    padding: 16px 19px;
+    margin-bottom: 21px;
+    color: #9c9c9c;
+    font-size: 13px;
+}
+
+.formStyle label {width: 100%;}
+
+.listLinks ul li {
+	margin:0 0 5px 0;
+	border-bottom:solid 1px #d3d3d3;
+	padding: 0 0 5px 0;
+}
+
+.listLinks ul li a {text-decoration: none;}
+
+.listLinks ul li:last-child {
+	border-bottom:none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.listLinks ul li i {
+	font-size: 18px;
+    width: 23px;
+    text-align: center;
+}
+
+body.inside-page section#oportunity .tab-content .box {display: inline-block;}
