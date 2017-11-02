@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "ocorrencias")
-public class Ocorrencias implements Serializable{
+@Table(name = "ocorrencia")
+public class Ocorrencia implements Serializable{
 
 	/**
 	 * 

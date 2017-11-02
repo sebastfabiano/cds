@@ -7,12 +7,6 @@ cdsJobs.controller ("indexController", function  ($scope,$location,$route,$http,
 	$scope.message="";
 	$scope.file="";
 	
-//	$scope.init = function(){                   
-//        $scope.usuario = JSON.parse(window.sessionStorage.getItem('usuario'));
-//        window.sessionStorage.removeItem('usuario');
-//    }
-//    $scope.init();
-	
 	$scope.salvarUsuario= function (){
 		
 		if ($scope.frmUsuario.$valid){

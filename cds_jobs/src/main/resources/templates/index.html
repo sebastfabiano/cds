@@ -82,7 +82,7 @@
 				</div>
 
 
-				<div class="col-md-4 col-md-offset-2"  ng-app="cdsJobs">
+				<div class="col-md-4 col-md-offset-2" ng-app="cdsJobs">
 					<form novalidate name="frmUsuario" ng-controller="indexController">
 						<h4>Quero Fazer Parte!</h4>
 
@@ -96,7 +96,7 @@
 									class="fa fa-google-plus" aria-hidden="true"></i></a>
 							</div>
 						</div>
-						<H4>{{message}}</H4>
+						<p class="bg-warning">{{message}}</p>
 						<input type="text" placeholder="Nome Completo" name="txtNome"
 							ng-minlength="3" ng-maxlength="100" ng-model="usuario.nome"
 							required="required" /> <input type="email" placeholder="E-mail"
@@ -109,7 +109,7 @@
 							ng-model="usuario.telefone" name="txtTelefone"
 							required="required" /> <input type="password"
 							placeholder="Senha" ng-model="usuario.senha" name="txtSenha"
-							required="required" /> <input type="submit"
+							required="required" /> <input type="submit" class="transition:all .4s ease-in-out;"
 							value="Crie Sua Conta" ng-click="salvarUsuario()" />
 
 					</form>
@@ -143,9 +143,8 @@
 						Paulo e Paraná), a empresa já atendeu mais de 200 clientes
 						públicos e privados, em 14 anos de atuação.</p>
 
-					<a href="#page-top"
-						class="page-scroll btn btn-offset btn-primary">Quero me
-						Cadastrar</a>
+					<a href="#page-top" class="page-scroll btn btn-offset btn-primary">Quero
+						me Cadastrar</a>
 				</div>
 
 				<div class="col-md-7">
@@ -171,7 +170,8 @@
 							<i class="sprite sprite-ico-design"></i> Design
 						</div>
 						<div class="col-md-4 box large wow fadeInUp" data-wow-delay="1s">
-							<i class="sprite sprite-ico-bi"></i> Business <br /> Intelligence
+							<i class="sprite sprite-ico-bi"></i> Business <br />
+							Intelligence
 						</div>
 					</div>
 				</div>
@@ -269,7 +269,7 @@
 	</section>
 
 	<!-- Modal Login -->
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"  
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
 		aria-labelledby="loginModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -282,12 +282,12 @@
 						<h4 class="modal-title" id="loginModalLabel">Fazer Login</h4>
 					</div>
 					<div class="modal-body">
-					<H4>{{message}}</H4>
-					<br/>
-						<label>E-mail</label> <input type="email" placeholder="E-mail"
-							name="txtEmail" ng-model="usuario.email" required> <label>Senha</label>
-						<input type="password" placeholder="Senha"
-							ng-model="usuario.senha" name="txtSenha" required="required" />
+						<p class="bg-warning">{{message}}</p>
+						<br /> <label>E-mail</label> <input type="email"
+							placeholder="E-mail" name="txtEmail" ng-model="usuario.email"
+							required> <label>Senha</label> <input type="password"
+							placeholder="Senha" ng-model="usuario.senha" name="txtSenha"
+							required="required" />
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" ng-click="login()">Acessar</button>

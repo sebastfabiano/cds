@@ -4,6 +4,10 @@ cdsJobs.controller ("detalheController", function  ($scope,$location,$route,$htt
 	
 	$scope.usuarios=[];
 	$scope.usuario={}; //Bind com o form
+	$scope.oportunidade=[];
+	$scope.oportunidade={}; //Bind com o form
+	$scope.ocorrencias=[];
+	$scope.ocorrencia={}; 	
 	$scope.message="";
 	
 	$scope.init = function(){                   
@@ -20,12 +24,12 @@ cdsJobs.controller ("detalheController", function  ($scope,$location,$route,$htt
 		location.href=("/jobs/index.html");
 	}
 	
-	$scope.salvarUsuario= function (){
+	$scope.atualizarUsuario= function (){
 		
-		if ($scope.frmUsuario.$valid){
+		if ($scope.frmDetalheUsuario.$valid){
 			$http({method:'POST', url:config.baseUrl + '/cadastrarUsuario/',data:$scope.usuario})
 			.then(function (response){
-				$scope.frmUsuario.$setPristine(true);
+				$scope.frmDetalheUsuario.$setPristine(true);
 				$scope.message ="Dados Cadastrados com Sucesso!"				
 			} , function (response){
 				$scope.message =response.data.message;

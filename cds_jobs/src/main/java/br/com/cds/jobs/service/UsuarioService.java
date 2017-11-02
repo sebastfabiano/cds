@@ -1,5 +1,6 @@
 package br.com.cds.jobs.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class UsuarioService {
 	public Usuario cadastrarUsuario(Usuario usuario) throws Exception {
 		Usuario us = null;
 		try {
+			usuario.setDataAtualizacao(new Date());
+			if(usuario.getIdUsuario()==null || usuario.getIdUsuario().longValue()==0) {
+				usuario.setDataCadastro(new Date());
+			}
 			us = usuarioRp.save(usuario);
 			if (usuario.getDocumentos() != null && !usuario.getDocumentos().isEmpty()) {
 				for (DocumentoUsuario documentoUsuario : usuario.getDocumentos()) {

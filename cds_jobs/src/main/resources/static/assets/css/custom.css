@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body.inside-page header {
-	background-position: center -194px;
+	background-position: center -200px;
 	padding-bottom: 66px!important;
 	margin: 0 0 27px!important;
 }
@@ -42,4 +42,24 @@ body.inside-page header nav.navbar {
     text-align: center;
 }
 
-body.inside-page section#oportunity .tab-content .box {display: inline-block;}
+body.inside-page section#oportunity .tab-content .box {display: inline-block; top: auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

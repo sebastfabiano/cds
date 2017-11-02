@@ -1,8 +1,10 @@
 package br.com.cds.jobs.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,15 +12,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = {"nome", "email"},name="usuario_ctn"))
+@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = {"email"},name="usuario_email_ctr"))
 public class Usuario implements Serializable {
 
 	/**
@@ -41,6 +44,14 @@ public class Usuario implements Serializable {
 	private String endereco;
 	private String telefone;
 	private String celular;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="DATA_ATUALIZACAO")
+	private Date dataAtualizacao;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="DATA_CADASTRO")
+	private Date dataCadastro;
 
 	@JsonProperty("documentos")
 	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
@@ -49,7 +60,6 @@ public class Usuario implements Serializable {
 
 	public Usuario() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	
@@ -130,5 +140,27 @@ public class Usuario implements Serializable {
 		this.documentos = documentos;
 	}
 
+	public Date getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+
+
+
+	public void setDataAtualizacao(Date dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
+	}
+
+
+
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+    
 
 }
